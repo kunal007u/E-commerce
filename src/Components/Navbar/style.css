@@ -1,0 +1,47 @@
+.nav-link{
+    text-decoration: none;
+}
+
+.brand{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    width: 104%;
+    justify-content: space-between;
+}
+
+.buttton {
+    color: white ;
+    padding: 1px;
+}
+
+.navbar {
+    position: fixed;
+    /* transform: translateY(0); */
+    top: -1;
+    width: 100%;
+    height: 60px;
+    max-height: fit-content;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    transition: all ease 0.5s;
+    z-index: 2;
+  }
+  
+  .disabled-cart {
+    color: gray !important; /* Set the color for disabled state */
+    /* Add other styles for disabled state */
+  }
+  
+  .cart-icon {
+    color: white !important; 
+    transition: all 0.5s ease-in;
+  }
+.activee{
+    background-color: white !important;
+    color: black !important;
+
+  }

@@ -1,0 +1,128 @@
+import { AppBar, Box, Button, IconButton, Menu, MenuItem, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material'
+import Logo from '@mui/icons-material/Fitbit';
+import React from 'react'
+import DrawerComp from './DrawerComp';
+import { Link } from 'react-router-dom';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import "./style.css"
+import MenuIcon from '@mui/icons-material/Menu';
+const pages = ["Home", "About", "Product", "Contact"];
+
+const Header = () => {
+  const [valueTabs, setvalueTabs] = React.useState(0)
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+  return (
+    <>
+      {/* <Box className="navbar">
+
+        <AppBar
+          sx={{ background: "#dfddf", backgroundColor: "rgba(28, 53, 63, 0.8)", backdropFilter: "blur(5px)", width: '100vw' }}
+          position="static"
+          style={{
+            // optional: to add blur effect
+          }}
+        >
+
+          <Toolbar >
+
+            {isMatch ? (
+              <>
+                <Typography sx={{ fontSize: "1.5rem", paddingLeft: "10%" }}>
+                  <Link to={"/"} className="brand">
+                    FizzCart
+                    <Logo sx={{ fontSize: "30px", mr: 2 }} />
+                  </Link>
+                </Typography>
+
+                <DrawerComp />
+              </>
+            ) : (
+              <>
+                <Typography sx={{ fontSize: "1.5rem", paddingLeft: "1%" }}>
+                  <Link to={"/"} className="brand">
+                    FizzCart
+                    <Logo sx={{ fontSize: "30px", mr: 2 }} />
+                  </Link>
+                </Typography> */}
+
+      {/* <Tabs
+                  textColor='inherit'
+                  value={valueTabs}
+                  onChange={(e, value) => setvalueTabs(value)}
+                  indicatorColor="secondary"
+                >
+                  {
+                    pages.map((page, index) => (
+
+                      <Tab
+                        label={page}
+                        to={page === "Home" ? "/" : `/${page.toLowerCase()}`}
+                        component={Link}
+                        key={index}
+                      />
+
+                    ))
+                  }
+                </Tabs> */}
+
+
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static"
+          sx={{ background: "#dfddf", backgroundColor: "rgba(28, 53, 63, 0.8)", backdropFilter: "blur(5px)", width: '100vw' }}
+        >
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              FizzCart
+            </Typography>
+            <Button color="inherit">Login</Button>
+          </Toolbar>
+        </AppBar>
+      </Box>
+
+
+      {/* <Button sx={{ background: "#b1cb96b3", marginLeft: "auto" }} variant="contained">
+                  Signup
+                </Button>
+                <Button sx={{ background: "#b1cb96b3", marginLeft: "10px" }} variant="contained">
+                  Login
+                </Button>
+              </>
+
+            )
+            }
+          </Toolbar>
+        </AppBar>
+      </Box> */}
+
+    </>
+  )
+}
+
+export default Header

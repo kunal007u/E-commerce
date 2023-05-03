@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+.heroBanner {
+  opacity: 0.7;
+}
+
+.cta {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.banner {
+  font-family: 'Crimson Text', serif !important;
+  text-shadow: 5px 5px #e8d2c3;
+  font-size: 100px !important;
+  transition: all 1s ease-in-out;
+}
+
+@media only screen and (max-width: 1000px) {
+  .banner {
+    font-size: 80px !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .banner {
+    font-size: 70px !important;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .banner {
+    font-size: 50px !important;
+  }
+  .wear-the-best {
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .wear-the-best {
+    width: 80% !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .wear-the-best {
+    width: 90% !important;
+  }
+}
+@media only screen and (max-width:400px) {
+  .wear-the-best {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width:350px) {
+  .wear-the-best {
+    width: 95% !important;
+  }
+  .banner {
+    font-size: 30px !important;
+  }
+}
